@@ -1,0 +1,41 @@
+@import '../../_variables.scss';
+
+.section3 {
+	min-height: 900px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	&__container {
+		max-width: 1070px;
+		margin: 0 auto;
+
+		h1 {
+			max-width: 890px;
+		}
+	}
+
+	.left__side {
+		// min-width: 300px;
+		max-width: 500px;
+
+		li {
+			list-style-type: disc;
+
+			&::marker {
+				font-size: 24px;
+			}
+		}
+	}
+
+	// TODO: fix this
+	.right__side {
+		transform: translate(150px, -340px);
+		margin-bottom: -340px;
+	}
+
+	.bottom__text {
+		text-align: center;
+		// margin-bottom: 59px;
+	}
+}

@@ -1,0 +1,32 @@
+.header {
+	height: 80px;
+	// margin: 0 185px; /* TODO: по бокам 185px, длина 1070px */
+	// border: 1px solid black;
+
+	&__container {
+		max-width: 1070px;
+		margin: 0 auto;
+	}
+
+	&__nav {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		// TODO: !!!
+		height: 100%;
+	}
+
+	&__logo {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 6px;
+	}
+
+	&__menu__list {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 25px;
+	}
+}

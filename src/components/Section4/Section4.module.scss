@@ -1,0 +1,55 @@
+@import '../../_variables.scss';
+
+.section4 {
+	background-color: $gray-dark-color;
+	color: $gray-light-color;
+	min-height: 1141px;
+
+	&__container {
+		max-width: 1070px;
+		margin: 0 auto;
+	}
+
+	&__card__container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		img {
+			transform: translate(-40px, -50px);
+		}
+	}
+
+	&__card {
+		min-width: 560px;
+		margin: 88px 0;
+		padding: 43px;
+		background-color: $gray-dark-color;
+		box-shadow: 2px 1px 16.3px 0 #0000008a;
+
+		&__start {
+			margin-top: 70px;
+			width: 345px;
+		}
+
+		span {
+			color: $green-color;
+		}
+
+		h3 {
+			margin: 0;
+		}
+
+		h2 {
+			font-size: 48px;
+			font-weight: 700;
+			line-height: 45px;
+			color: $green-color;
+			margin: 15px 0; // o_O
+		}
+
+		button {
+			background-color: $green-color;
+		}
+	}
+}

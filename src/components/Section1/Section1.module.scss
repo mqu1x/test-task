@@ -1,0 +1,58 @@
+@import '../../_variables.scss';
+
+.hero {
+	// TODO: !!!
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	min-height: 800px;
+	background-color: $gray-dark-color;
+	color: $gray-light-color;
+
+	&__container {
+		height: 100%;
+		max-width: 1070px;
+		margin: 0 auto;
+
+		display: flex;
+		// TODO: !!!
+		align-items: center;
+		gap: 42px;
+	}
+
+	&__course__card {
+		min-width: 560px;
+		padding: 0 36px;
+		background-color: $gray-dark-color;
+
+		box-shadow: 2px 1px 16.3px 0 #0000008a;
+	}
+
+	&__img {
+		transform: translateY(-28.5px);
+	}
+}
+
+// TODO: пока отдельно, потом будет стилизованный компонент
+
+.course__card__button {
+	display: flex;
+	gap: 22px;
+	margin-bottom: 22px;
+}
+
+.card__button__primary:hover {
+	background-color: $green-color;
+}
+
+.card__button__secondary {
+	border: 3px solid $blue-color;
+	background-color: $gray-dark-color;
+	color: $gray-light-color;
+}
+
+.card__button__secondary:hover {
+	border-color: $green-color;
+}

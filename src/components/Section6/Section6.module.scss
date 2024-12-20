@@ -1,0 +1,20 @@
+@import '../../_variables.scss';
+
+.section6 {
+	background-color: $blue-color;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+
+	li {
+		list-style-type: disc;
+	}
+
+	&__list {
+		display: flex;
+		gap: 20px;
+		flex-wrap: wrap;
+	}
+}

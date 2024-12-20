@@ -1,0 +1,41 @@
+@import '../../_variables.scss';
+
+.modal {
+	color: #fff;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	// width: 100vw;
+	// height: 100vh;
+	background-color: $gray-dark-color;
+	z-index: 10;
+	backdrop-filter: blur(10px);
+
+	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+
+	h1 {
+		color: $blue-color;
+		width: 60%; // TODO: fix it
+		word-wrap: break-word;
+		// TODO:
+		overflow-wrap: break-word;
+	}
+
+	&__container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 37px;
+		margin: 59px 72px;
+		// относительно .modal
+		position: relative;
+	}
+
+	&__close {
+		position: absolute;
+		top: 0;
+		right: 0;
+		cursor: pointer;
+	}
+}

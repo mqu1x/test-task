@@ -1,0 +1,50 @@
+@import '../../_variables.scss';
+
+.modulesList {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	margin-top: 59px;
+
+	h3,
+	p {
+		margin: 6px 0;
+	}
+
+	&__day {
+		li {
+			list-style: decimal;
+		}
+
+		&__header {
+			border: 3px solid $green-color;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			padding: 0 22px;
+		}
+
+		&__topics {
+			width: calc(100% / 3 * 2);
+
+			// gap: 10px;
+
+			&__item {
+				&:hover {
+					color: $blue-color;
+				}
+
+				&:not(:last-child) {
+					display: flex;
+					justify-content: space-between;
+					border-bottom: 2px solid $gray-light-color;
+				}
+			}
+
+			&__container {
+				display: flex;
+				justify-content: flex-end;
+			}
+		}
+	}
+}

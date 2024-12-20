@@ -1,0 +1,22 @@
+@import '../../_variables.scss';
+
+.footer {
+	background-color: $gray-dark-color;
+	color: $gray-light-color;
+
+	&__container {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__logo {
+		// TODO: !!!
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__info {
+		text-align: center;
+	}
+}

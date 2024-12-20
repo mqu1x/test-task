@@ -1,0 +1,25 @@
+@import '../../_variables.scss';
+
+.section2 {
+	// TODO: !!!
+	background-color: $blue-color;
+	min-height: 800px;
+	color: $gray-light-color;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	&__container {
+		max-width: 1070px;
+		margin: 0 auto;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 21px;
+	}
+
+	&__img {
+		margin: 145px 0;
+	}
+}

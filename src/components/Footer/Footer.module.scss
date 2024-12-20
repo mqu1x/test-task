@@ -1,4 +1,4 @@
-@import '../../_variables.scss';
+@use '../../_variables.scss' as *;
 
 .footer {
 	background-color: $gray-dark-color;

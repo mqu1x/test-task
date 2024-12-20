@@ -4,10 +4,12 @@
 	background-color: $gray-dark-color;
 	color: $gray-light-color;
 	min-height: 1141px;
+	overflow: hidden;
 
 	&__container {
 		max-width: 1070px;
 		margin: 0 auto;
+		transform: translateX(-75px);
 	}
 
 	&__card__container {

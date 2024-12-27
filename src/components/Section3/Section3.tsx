@@ -2,7 +2,7 @@ import imgSection3 from '../../assets/img-section3.svg'
 import styles from './Section3.module.scss'
 
 const Section3 = () => {
-	const content = [
+	const content: string[] = [
 		'устройство PostgreSQL и важнейшие приёмы её администрирования, от программирования до оптимизации',
 		'конфигурации безопасности при разработке web-приложений',
 		'архитектура СУБД',
@@ -11,30 +11,29 @@ const Section3 = () => {
 	return (
 		<section className={styles.section3}>
 			<div className={styles.section3__container}>
-				{/* TODO: один h1 на странице */}
 				<h1>Цель курса – освоение работы с базами данных.</h1>
 
-				<div className={styles.left__side}>
-					<ul>
-						{content.map((item, index) => (
-							<li key={index}>
-								<p>
-									{index === 0 ? (
-										<>
-											устройство PostgreSQL и важнейшие приёмы её
-											администрирования,
-											<b>от программирования до оптимизации</b>
-										</>
-									) : (
-										item
-									)}
-								</p>
-							</li>
-						))}
-					</ul>
-				</div>
+				<div className={styles.section3__content}>
+					<div className={styles.left__side}>
+						<ul>
+							{content.map((item, index) => (
+								<li key={index}>
+									<p>
+										{index === 0 ? (
+											<>
+												устройство PostgreSQL и важнейшие приёмы её
+												администрирования,
+												<b> от программирования до оптимизации</b>
+											</>
+										) : (
+											item
+										)}
+									</p>
+								</li>
+							))}
+						</ul>
+					</div>
 
-				<div className={styles.right__side}>
 					<img src={imgSection3} alt='Laptop with database visualizations' />
 				</div>
 

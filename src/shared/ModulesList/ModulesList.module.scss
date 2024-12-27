@@ -12,10 +12,7 @@
 	}
 
 	&__day {
-		li {
-			list-style: decimal;
-		}
-
+		margin-bottom: 83px;
 		&__header {
 			border: 3px solid $green-color;
 			display: flex;
@@ -25,18 +22,18 @@
 		}
 
 		&__topics {
-			width: calc(100% / 3 * 2);
-
-			// gap: 10px;
+			width: 710px;
 
 			&__item {
+				display: flex;
+				justify-content: space-between;
+
 				&:hover {
 					color: $blue-color;
+					cursor: pointer;
 				}
 
 				&:not(:last-child) {
-					display: flex;
-					justify-content: space-between;
 					border-bottom: 2px solid $gray-light-color;
 				}
 			}

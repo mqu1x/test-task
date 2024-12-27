@@ -1,39 +1,51 @@
 @use '../../_variables.scss' as *;
 
 .section5 {
+	background: url('../../assets/lines2.svg') no-repeat center center;
+	background-size: cover;
 	background-color: $gray-dark-color;
 	color: $gray-light-color;
 
 	&__img {
-		// TODO: fix img position
-		// transform: translateX(-200px);
+		transform: translateY(35px);
 	}
 
 	&__container {
 		max-width: 1070px;
 		margin: 0 auto;
 
-		// display: flex;
-		// // flex-direction: column;
-		// align-items: center;
-		// justify-content: center;
-
 		&__content {
 			display: flex;
+			align-items: center;
 			gap: 21px;
-
-			// align-items: center;
 		}
 
 		&__text {
-			min-width: 480px;
-			// display: flex;
-			// flex-direction: column;
-			// align-items: center;
-			// justify-content: center;
+			max-width: 510px;
 
 			span {
 				color: $green-color;
+			}
+		}
+	}
+}
+
+@media (max-width: 1200px) {
+	.section5 {
+		&__container {
+			padding: 0 10%;
+			&__content {
+				flex-direction: column;
+			}
+		}
+	}
+}
+
+@media (max-width: 992px) {
+	.section5 {
+		&__container {
+			&__text {
+				text-align: center;
 			}
 		}
 	}

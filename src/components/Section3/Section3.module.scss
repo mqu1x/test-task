@@ -1,10 +1,11 @@
 @use '../../_variables.scss' as *;
 
 .section3 {
+	background-color: $gray-light-color;
 	min-height: 900px;
 	display: flex;
 	justify-content: center;
-	align-items: center;
+	padding: 50px 0;
 
 	&__container {
 		max-width: 1070px;
@@ -16,8 +17,8 @@
 	}
 
 	.left__side {
-		// min-width: 300px;
 		max-width: 500px;
+		line-height: 36px;
 
 		li {
 			list-style-type: disc;
@@ -28,14 +29,45 @@
 		}
 	}
 
-	// TODO: fix this
-	.right__side {
-		transform: translate(150px, -340px);
-		margin-bottom: -340px;
+	img {
+		margin-top: -275px;
+		margin-left: 120px;
 	}
 
 	.bottom__text {
 		text-align: center;
-		// margin-bottom: 59px;
+		margin-top: 35px;
+	}
+}
+
+@media (max-width: 1200px) {
+	.section3 {
+		&__container {
+			padding: 0 10%;
+		}
+		&__content {
+			display: flex;
+			flex-direction: column-reverse;
+
+			.left__side {
+				max-width: 100%;
+			}
+
+			img {
+				margin: 0;
+				max-width: 100%;
+				margin: 0 auto;
+			}
+		}
+	}
+}
+
+@media (max-width: 650px) {
+	.section3 {
+		&__container {
+			h1 {
+				text-align: center;
+			}
+		}
 	}
 }

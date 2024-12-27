@@ -1,11 +1,17 @@
 import { useState } from 'react'
+import arrowImg from '../../assets/arrow.svg'
 import Modal from '../Modal/Modal'
 import styles from './ModulesList.module.scss'
 
 const ModulesList = () => {
-	const modules = [
+	type Modules = {
+		title: string
+		description: string
+		topics: string[]
+	}
+
+	const modules: Modules[] = [
 		{
-			id: 1,
 			title: 'Первый день',
 			description: '4 часа теории + 4 часа практики',
 			topics: [
@@ -16,7 +22,6 @@ const ModulesList = () => {
 			],
 		},
 		{
-			id: 2,
 			title: 'Второй день',
 			description: '4 часа теории + 4 часа практики',
 			topics: [
@@ -27,21 +32,22 @@ const ModulesList = () => {
 			],
 		},
 		{
-			id: 3,
 			title: 'Третий день',
 			description: '3 часа',
-			topics: ['Обратная связь', 'Разбор вопросов', 'Консультирование'],
+			topics: ['Обратная связь;', 'Разбор вопросов;', 'Консультирование.'],
 		},
 	]
 
-	// TODO: 3 модуль сделать через SCSS
-	// TODO: вынести так же кнопку в одтельный компонент
-	const [isModalOpen, setIsModalOpen] = useState(false)
-	const [topic, setTopic] = useState('')
+	const [modulesState, setModulesState] = useState({
+		isModalOpen: false,
+		topic: '',
+	})
 
 	const handleOpenModal = (topic: string) => {
-		setIsModalOpen(true)
-		setTopic(topic)
+		setModulesState({
+			isModalOpen: !modulesState.isModalOpen,
+			topic: topic,
+		})
 	}
 
 	return (
@@ -55,26 +61,40 @@ const ModulesList = () => {
 					<div className={styles.modulesList__day__topics__container}>
 						<div className={styles.modulesList__day__topics}>
 							<ol>
-								{day.topics.map((topic, id) => (
-									<div
-										key={id}
-										className={styles.modulesList__day__topics__item}
-									>
-										<li onClick={() => handleOpenModal(topic)}>
-											<p>{topic}</p>
+								{day.topics.map((topic, i) =>
+									day.title === 'Третий день' ? (
+										<li key={i}>
+											<p>
+												{i + 1}. {topic}
+											</p>
 										</li>
-									</div>
-								))}
+									) : (
+										<div
+											key={i}
+											className={styles.modulesList__day__topics__item}
+										>
+											<li onClick={() => handleOpenModal(topic)}>
+												<p>
+													{i + 1}. {topic}
+												</p>
+											</li>
+											<img src={arrowImg} alt='arrow' />
+										</div>
+									)
+								)}
 							</ol>
 						</div>
 					</div>
 				</div>
 			))}
 
-			{/* TODO: убрать нижнюю границу у 3 модуля */}
-
-			{isModalOpen && (
-				<Modal setIsModalOpen={setIsModalOpen} topicText={topic} />
+			{modulesState.isModalOpen && (
+				<Modal
+					setIsModalOpen={value =>
+						setModulesState(prev => ({ ...prev, isModalOpen: value }))
+					}
+					topicText={modulesState.topic}
+				/>
 			)}
 		</div>
 	)

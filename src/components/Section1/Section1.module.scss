@@ -1,8 +1,6 @@
 @use '../../_variables.scss' as *;
 
 .hero {
-	// TODO: !!!
-
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -11,20 +9,27 @@
 	background-color: $gray-dark-color;
 	color: $gray-light-color;
 
+	&__container_wrapper {
+		height: 640px;
+		width: 100%;
+		background: url('../../assets/lines.svg') no-repeat center center;
+		background-size: cover;
+	}
+
 	&__container {
-		height: 100%;
 		max-width: 1070px;
+		display: flex;
+
+		align-items: center;
 		margin: 0 auto;
 
-		display: flex;
-		// TODO: !!!
-		align-items: center;
 		gap: 42px;
 	}
 
 	&__course__card {
-		min-width: 560px;
-		padding: 0 36px;
+		width: 560px;
+
+		padding: 25px 36px;
 		background-color: $gray-dark-color;
 
 		box-shadow: 2px 1px 16.3px 0 #0000008a;
@@ -35,12 +40,15 @@
 	}
 }
 
-// TODO: пока отдельно, потом будет стилизованный компонент
-
 .course__card__button {
+	margin-top: 38px;
 	display: flex;
 	gap: 22px;
 	margin-bottom: 22px;
+
+	button {
+		width: 234px;
+	}
 }
 
 .card__button__primary:hover {
@@ -55,4 +63,61 @@
 
 .card__button__secondary:hover {
 	border-color: $green-color;
+}
+
+@media (max-width: 1200px) {
+	.hero {
+		&__container {
+			padding: 0 5%;
+		}
+
+		&__course__card {
+			max-width: clamp(340px, 100%, 660px);
+		}
+	}
+}
+
+@media (max-width: 992px) {
+	.hero {
+		&__container {
+			justify-content: center;
+			flex-direction: column;
+		}
+
+		&__img {
+			display: none;
+		}
+	}
+}
+
+@media (max-width: 480px) {
+	.hero {
+		&__course__card {
+			width: 400px;
+			text-align: center;
+		}
+
+		.course__card {
+			padding: 0;
+		}
+		&__course__card {
+			padding: 12px 18px;
+		}
+	}
+
+	.course__card__button {
+		flex-direction: column;
+
+		button {
+			width: 100%;
+		}
+	}
+}
+
+@media (max-width: 320px) {
+	.hero {
+		&__course__card {
+			width: 300px;
+		}
+	}
 }

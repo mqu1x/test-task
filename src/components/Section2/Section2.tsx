@@ -5,11 +5,10 @@ const Section2 = () => {
 	return (
 		<div className={styles.section2}>
 			<div className={styles.section2__container}>
-				<img
-					className={styles.section2__img}
-					src={imgSection2}
-					alt='section2-img'
-				/>
+				<div className=''>
+					<img src={imgSection2} alt='section2-img' />
+				</div>
+
 				<div className={styles.section2__text}>
 					<p>
 						<b>PostgreSQL</b> – свободная кроссплатформенная система управления
@@ -19,7 +18,7 @@ const Section2 = () => {
 					<br />
 					<p>
 						<b>Изучение SQL</b> это один из способов попробовать себя в качестве
-						бэкенд-разработчика (backend developer) или разработчика приложений.
+						бэкенд-разработчика (backend developer) или разработчика приложений.
 					</p>
 				</div>
 			</div>

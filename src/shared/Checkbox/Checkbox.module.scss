@@ -1,0 +1,45 @@
+@use '../../_variables.scss' as *;
+
+.checkbox {
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+
+	p {
+		margin: 0;
+	}
+
+	&__input {
+		position: absolute;
+		opacity: 0;
+		height: 0;
+		width: 0;
+
+		// когда чекбокс отмечен
+		&:checked + .checkbox__span:before {
+			display: block;
+		}
+	}
+
+	&__span {
+		position: relative;
+		width: 27px;
+		height: 27px;
+		border: 2px solid $gray-light-color;
+		display: inline-block;
+		margin-right: 10px;
+
+		&:before {
+			content: '';
+			position: absolute;
+			display: none;
+			width: 15px;
+			height: 15px;
+			background-color: $gray-light-color;
+			top: 50%;
+			left: 50%;
+
+			transform: translate(-50%, -50%);
+		}
+	}
+}

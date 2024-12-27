@@ -3,16 +3,44 @@
 .section7 {
 	background-color: $gray-dark-color;
 	color: $gray-light-color;
-	// TODO: del color
-	// padding: 20px;
 
-	// max-width: 600px;
-	// margin: 0 auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	span {
+		color: $blue-color;
+		font-weight: 700;
+	}
+
+	&__content {
+		max-width: 1285px;
+		margin: 66px auto;
+	}
+
+	&__title {
+		color: $blue-color;
+	}
+
+	&__container {
+		max-width: 1070px;
+		margin: 0 auto;
+		display: flex;
+		justify-content: space-around;
+		gap: 12px;
+	}
+
+	&__intesive_reg {
+		max-width: 710px;
+		margin-top: 40px auto;
+	}
 
 	&__form {
-		// display: flex;
-		// flex-direction: column;
-		// gap: 15px;
+		&__content {
+			display: flex;
+			flex-direction: column;
+			gap: 20px;
+		}
 
 		&__contacts {
 			display: flex;
@@ -32,11 +60,8 @@
 		}
 
 		&__sqlKnowledge {
-			display: flex;
-			flex-direction: column;
-			gap: 15px;
-
 			&__items {
+				margin-top: 20px;
 				display: flex;
 				flex-direction: column;
 				gap: 20px;
@@ -45,72 +70,61 @@
 
 		&__minKnowledge {
 			&__items {
+				margin-top: 20px;
 				display: flex;
-				// flex-direction: column;
-				gap: 20px;
+				flex-wrap: wrap;
+				gap: 50px;
+
+				&__item {
+					display: flex;
+					flex-direction: column;
+					gap: 20px;
+				}
 			}
 		}
 
-		// &__button {
-		// 	width: 100%;
-		// 	background-color: $blue-color;
-		// 	color: $gray-light-color;
-		// 	padding: 10px 20px;
-		// 	border: none;
-		// 	border-radius: 4px;
-		// 	cursor: pointer;
-		// }
+		&__button {
+			max-width: 100%;
+			margin: 40px 0;
+		}
 	}
 
-	&__line {
-		width: 100%;
-		height: 2px;
-		background-color: $gray-light-color;
-		// margin: 30px 0;
+	&__address {
+		margin-bottom: 20px;
+		a {
+			font-weight: 400;
+		}
 	}
+}
 
-	// h2 {
-	// 	color: $blue-color;
-	// 	margin-bottom: 20px;
-	// }
+@media (max-width: 1200px) {
+	.section7 {
+		&__container {
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+			padding: 0 10%;
+		}
+	}
+}
 
-	// form {
-	// 	display: flex;
-	// 	flex-direction: column;
-	// 	gap: 15px;
+@media (max-width: 480px) {
+	.section7 {
+		text-align: center;
 
-	// 	div {
-	// 		display: flex;
-	// 		flex-direction: column;
-	// 		gap: 5px;
+		&__form {
+			&__contacts {
+				flex-direction: column;
+				align-items: center;
+			}
 
-	// 		label {
-	// 			font-weight: bold;
-	// 		}
+			&__minKnowledge__items {
+				align-items: center;
+			}
+		}
 
-	// 		input[type='text'] {
-	// 			padding: 10px;
-	// 			border: 1px solid $gray-light-color;
-	// 			border-radius: 4px;
-	// 		}
-
-	// 		input[type='radio'] {
-	// 			margin-right: 5px;
-	// 		}
-	// 	}
-
-	// 	button {
-	// 		padding: 10px 20px;
-	// 		background-color: $blue-color;
-	// 		color: #fff;
-	// 		border: none;
-	// 		border-radius: 4px;
-	// 		cursor: pointer;
-	// 		transition: background-color 0.3s;
-
-	// 		&:hover {
-	// 			background-color: darken($blue-color, 10%);
-	// 		}
-	// 	}
-	// }
+		&__intesive_reg {
+			width: 100vw;
+		}
+	}
 }

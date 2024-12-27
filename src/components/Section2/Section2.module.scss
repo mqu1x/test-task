@@ -1,7 +1,6 @@
 @use '../../_variables.scss' as *;
 
 .section2 {
-	// TODO: !!!
 	background-color: $blue-color;
 	min-height: 800px;
 	color: $gray-light-color;
@@ -10,16 +9,41 @@
 	justify-content: center;
 	align-items: center;
 
+	img {
+		width: 100%;
+	}
+
 	&__container {
 		max-width: 1070px;
-		margin: 0 auto;
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		gap: 21px;
 	}
 
-	&__img {
-		margin: 145px 0;
+	&__text {
+		width: clamp(300px, 100%, 530px);
+	}
+}
+
+@media (max-width: 1200px) {
+	.section2 {
+		&__container {
+			padding: 0 10%;
+		}
+	}
+}
+
+@media (max-width: 992px) {
+	.section2 {
+		&__container {
+			padding: 50px;
+			flex-direction: column;
+			text-align: center;
+		}
+
+		&__img {
+			margin: 0 auto;
+		}
 	}
 }

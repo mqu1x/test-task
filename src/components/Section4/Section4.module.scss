@@ -1,29 +1,26 @@
 @use '../../_variables.scss' as *;
 
 .section4 {
+	background: url('../../assets/lines1.svg') no-repeat center center;
+	background-size: cover;
 	background-color: $gray-dark-color;
 	color: $gray-light-color;
 	min-height: 1141px;
-	overflow: hidden;
-
-	&__container {
-		max-width: 1070px;
-		margin: 0 auto;
-		transform: translateX(-75px);
-	}
 
 	&__card__container {
 		display: flex;
-		justify-content: space-between;
+		justify-content: center;
 		align-items: center;
+	}
 
-		img {
-			transform: translate(-40px, -50px);
-		}
+	img {
+		max-width: 100%;
+		margin-left: -50px;
+		margin-top: 30px;
 	}
 
 	&__card {
-		min-width: 560px;
+		width: clamp(100px, 100%, 560px);
 		margin: 88px 0;
 		padding: 43px;
 		background-color: $gray-dark-color;
@@ -31,15 +28,27 @@
 
 		&__start {
 			margin-top: 70px;
-			width: 345px;
+			max-width: 345px;
+			display: flex;
+			flex-direction: column;
+			gap: 25px;
+			margin-bottom: 18px;
 		}
 
 		span {
 			color: $green-color;
 		}
 
-		h3 {
-			margin: 0;
+		&__days {
+			margin-top: 15px;
+		}
+
+		&__group {
+			margin-top: 40px;
+		}
+
+		&__cost {
+			margin-top: 40px;
 		}
 
 		h2 {
@@ -47,11 +56,57 @@
 			font-weight: 700;
 			line-height: 45px;
 			color: $green-color;
-			margin: 15px 0; // o_O
+			margin: 15px 0;
 		}
 
 		button {
 			background-color: $green-color;
+		}
+	}
+}
+
+@media (max-width: 1200px) {
+	.section4 {
+		img {
+			max-width: 130%;
+		}
+		&__container {
+			padding: 0 10%;
+		}
+	}
+}
+
+@media (max-width: 992px) {
+	.section4 {
+		img {
+			width: clamp(100px, 100%, 130%);
+			margin: 10px auto;
+		}
+		&__card__container {
+			flex-direction: column-reverse;
+		}
+
+		&__card {
+			margin: 22px;
+		}
+	}
+}
+
+@media (max-width: 480px) {
+	.section4 {
+		text-align: center;
+
+		h2 {
+			font-size: 32px;
+		}
+
+		&__container {
+			padding: 0 5%;
+		}
+
+		&__card {
+			padding: 20px;
+			margin: 0 auto;
 		}
 	}
 }
